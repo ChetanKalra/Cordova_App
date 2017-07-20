@@ -1,0 +1,158 @@
+@font-face{
+	font-family: futura-book;
+	src: url('../fonts/FuturaPTBook.otf');
+}
+
+.add-new-btn{
+	height: 80px;
+	width: 100%;
+	background: #CFB53B;
+	border-radius: 5px;
+	display: table;
+
+}
+
+.description-name{
+	height: 80px;
+	width: 100%;
+	display: table;
+}
+
+.new-img-div{
+	height: 140px;
+	width: 100vw;
+	margin: -5px;
+	background: #CFB53B;
+	position: relative;
+	/*background: url(../img/4.jpg) !important;*/
+	text-align: center;
+}
+
+.container-custom{
+	height: 100%;
+}
+
+.add-new-text{
+	text-align: center;
+	color: #fff;
+	display: table-cell;
+	font-family: futura-book;
+	vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 100;
+}
+
+.custom-img{
+	border-radius: 100%;
+	height: 60px;
+    width: 60px;
+}
+
+.custom-img.addnew-img{
+	height: 98px;
+	left: 50%;
+	top: 100%;
+	position: absolute;
+	width: 98px;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+.info{
+	height: 80px;
+	width: 100%;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: 1px solid #777;
+}
+
+.info-child{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.img-div{
+	text-align: center;
+}
+
+.des-div{
+	padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+.des-div p{
+	margin-bottom: 0px !important;
+}
+
+.des-name{
+	font-family: futura-book;
+	color: #CFB53B;
+}
+
+.des-msg{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family: futura-book;
+	color: #777;
+	overflow: hidden;
+}
+
+a, a:hover{
+	text-decoration: none !important;
+}
+
+.description-name .add-new-text{
+	color: #CFB53B !important;
+}
+
+.description-p{
+	font-family: futura-book;
+	text-align: center;
+	padding: 10px;
+}
+
+.custom-text{
+	/*margin-top: 80px;*/
+}
+
+.custom-textarea{
+	margin-top: 10px;
+	height: 200px;
+}
+
+.form-control:focus{
+	border-color: #CFB53B !important;
+}
+
+.custom-submit{
+	background: #CFB53B;
+	text-align: center;
+	color: #fff;
+	width: 110px;
+    height: 40px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#error_msg{
+	font-size: 12px;
+	color: #a10000;
+	margin-top: 85px;
+}
+
+.faplus{
+	font-size: 20px;
+	position: absolute;
+    top: 100%;
+    transform: translate(-50%,-50%);
+    border: 1px solid;
+    border-radius: 100%;
+    background: #fff;
+    border-color: #a1a1a1;
+    padding: 40px;
+    box-shadow: 0px 0px 2px #747474;
+    color: #CFB53B;
+}
