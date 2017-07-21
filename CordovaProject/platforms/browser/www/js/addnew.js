@@ -1,7 +1,18 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(cordova.file.dataDirectory);
-}
+//  document.addEventListener("deviceready", onDeviceReady, false);
+
+//  function onDeviceReady()
+//  {
+
+// 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) { 
+// 		alert(fileSys.name);
+// 		fileSystem.root.getDirectory("lightning",{create: true, exclusive: false}, function(dir){
+// 			alert("Created dir "+dir.name);
+// 		},
+// 		function(error){
+// 			alert("Error creating directory "+ fileErrorCode(error.code));
+// 		});
+// 	});
+// }
 
 
 function usersubmit(){
@@ -35,8 +46,7 @@ document.getElementById('image-upload').addEventListener("click", cameraTakePict
 
 function cameraTakePicture(){
 	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 50, 
-      allowEdit: true,
+      quality: 50,
       destinationType: Camera.DestinationType.DATA_URL 
     });  
    
@@ -44,10 +54,12 @@ function cameraTakePicture(){
     	document.getElementById('user_img').style.display = 'block';
       var image = document.getElementById('user_img'); 
       image.src = "data:image/jpeg;base64," + imageData; 
+      movePic(image);
     }  
    
     function onFail(message) { 
       alert('Failed because: ' + message); 
     } 
 }
+
 
