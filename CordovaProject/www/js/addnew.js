@@ -1,3 +1,19 @@
+//  document.addEventListener("deviceready", onDeviceReady, false);
+
+//  function onDeviceReady()
+//  {
+
+// 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) { 
+// 		alert(fileSys.name);
+// 		fileSystem.root.getDirectory("lightning",{create: true, exclusive: false}, function(dir){
+// 			alert("Created dir "+dir.name);
+// 		},
+// 		function(error){
+// 			alert("Error creating directory "+ fileErrorCode(error.code));
+// 		});
+// 	});
+// }
+
 
 function usersubmit(){
 	
@@ -30,7 +46,7 @@ document.getElementById('image-upload').addEventListener("click", cameraTakePict
 
 function cameraTakePicture(){
 	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 50, 
+      quality: 50,
       destinationType: Camera.DestinationType.DATA_URL 
     });  
    
@@ -38,7 +54,7 @@ function cameraTakePicture(){
     	document.getElementById('user_img').style.display = 'block';
       var image = document.getElementById('user_img'); 
       image.src = "data:image/jpeg;base64," + imageData; 
-      movePic();
+      movePic(image);
     }  
    
     function onFail(message) { 
@@ -46,36 +62,4 @@ function cameraTakePicture(){
     } 
 }
 
-function movePic(file){ 
-    window.resolveLocalFileSystemURI(file, resolveOnSuccess, resOnError); 
-} 
 
-//Callback function when the file system uri has been resolved
-function resolveOnSuccess(entry){ 
-    var d = new Date();
-    var n = d.getTime();
-    //new file name
-    var newFileName = n + ".jpg";
-    var myFolderApp = "EasyPacking";
-
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {      
-    //The folder is created if doesn't exist
-    fileSys.root.getDirectory( myFolderApp,
-                    {create:true, exclusive: false},
-                    function(directory) {
-                        entry.moveTo(directory, newFileName,  successMove, resOnError);
-                    },
-                    resOnError);
-                    },
-    resOnError);
-}
-
-//Callback function when the file has been moved successfully - inserting the complete path
-function successMove(entry) {
-    //I do my insert with "entry.fullPath" as for the path
-    alert("Success");
-}
-
-function resOnError(error) {
-    alert(error.code);
-}
